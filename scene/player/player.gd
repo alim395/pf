@@ -52,3 +52,11 @@ func _physics_process(delta: float):
 
 	# Attack
 	player_attack()
+
+func damage_player(n: int):
+	currhealthPoints -= n
+	player_damaged.emit()
+
+func heal_player(n: int):
+	currhealthPoints += n
+	player_damaged.emit()

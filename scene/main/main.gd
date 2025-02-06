@@ -8,9 +8,19 @@ func _ready() -> void:
 	set_magic_bar()
 
 func _process(delta: float) -> void:
+	# Debug Functions
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
-
+	if Input.is_action_just_pressed("DebugDamage"):
+		$Player.currhealthPoints -= 1
+		print($Player.currhealthPoints)
+		set_health_bar()
+	if Input.is_action_just_pressed("DebugHeal"):
+		$Player.currhealthPoints += 1
+		print($Player.currhealthPoints)
+		set_health_bar()
+	if Input.is_action_just_pressed("DebugExit"):
+		get_tree().change_scene_to_file("res://scene/menus/main_menu/main_menu.tscn")
 func set_health_bar() -> void:
 	$HUD/HealthBar.value = $Player.currhealthPoints
 

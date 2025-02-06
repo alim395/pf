@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqp32rkbyta3h"]
+[gd_scene load_steps=9 format=3 uid="uid://dqp32rkbyta3h"]
 
 [ext_resource type="PackedScene" uid="uid://blv22nf4vm8r3" path="res://scene/player/player.tscn" id="1_1ilrj"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_6780g"]
+[ext_resource type="Texture2D" uid="uid://btujjtirf7euv" path="res://sprite/UI/HP_EMPTY.png" id="2_nm718"]
 [ext_resource type="PackedScene" uid="uid://bounvdgw8g01y" path="res://scene/room/room.tscn" id="2_wylpf"]
+[ext_resource type="Texture2D" uid="uid://dvkxldwfndg1y" path="res://sprite/UI/HP_FULL.png" id="3_xst2w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw2pf"]
 
@@ -22,7 +24,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HealthBar" type="ProgressBar" parent="HUD"]
+[node name="HealthBar0" type="ProgressBar" parent="HUD"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -37,6 +40,7 @@ rounded = true
 show_percentage = false
 
 [node name="MagicBar" type="ProgressBar" parent="HUD"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 45.0
@@ -49,6 +53,20 @@ step = 1.0
 value = 20.0
 rounded = true
 show_percentage = false
+
+[node name="HealthBar" type="TextureProgressBar" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 8.66
+anchor_bottom = 8.66
+offset_right = 3117.6
+offset_bottom = 3117.6
+scale = Vector2(0.05, 0.05)
+max_value = 20.0
+value = 15.0
+fill_mode = 3
+texture_under = ExtResource("2_nm718")
+texture_progress = ExtResource("3_xst2w")
 
 [node name="Room" parent="." instance=ExtResource("2_wylpf")]
 
