@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://blv22nf4vm8r3"]
+[gd_scene load_steps=6 format=3 uid="uid://blv22nf4vm8r3"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_y606v"]
 [ext_resource type="Texture2D" uid="uid://8f17snhp6e37" path="res://resource/icon.png" id="2_c73i6"]
+[ext_resource type="Resource" uid="uid://b4q83jnewtman" path="res://scene/inventory/playerinventory.tres" id="2_fabeq"]
+[ext_resource type="PackedScene" uid="uid://bs2w0d32ul3fm" path="res://scene/inventory/inventory_ui.tscn" id="4_w7533"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tsvb7"]
 radius = 32.0156
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_y606v")
+inventory = ExtResource("2_fabeq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_c73i6")
@@ -16,3 +19,9 @@ texture = ExtResource("2_c73i6")
 shape = SubResource("CircleShape2D_tsvb7")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Inventory_UI" parent="." instance=ExtResource("4_w7533")]
+offset_left = -40.0
+offset_top = -86.0
+offset_right = 40.0
+offset_bottom = -46.0

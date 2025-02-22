@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://m1ovjln312nd"]
+
+[ext_resource type="Texture2D" uid="uid://dlu7qhntba1xh" path="res://sprite/inventory/placeholder_inventory_slot.jpg" id="1_6b0lv"]
+[ext_resource type="Script" path="res://scene/inventory/inventory_ui_slot.gd" id="1_vuc7e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp114"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="inventory_UI_slot" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 1
+script = ExtResource("1_vuc7e")
+item_info_text = "Item info test text"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6b0lv")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 17.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+text = "99"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 48.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_hp114")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="TextureRect/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

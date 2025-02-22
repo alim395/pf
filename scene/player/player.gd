@@ -18,9 +18,12 @@ signal magic_shoot
 @export_group("WeaponMagic Properties")
 @export var magic = preload("res://scene/weapons/magic/MagicBall.tscn")
 
+@export_group("Inventory Properties")
+@export var inventory: Inventory
+
 var input = Vector2.ZERO
 var magic_cooldown = true
-
+	
 # Get Input and Normalize
 func player_movement(input, delta):
 	if input: velocity = velocity.move_toward(input * max_speed , delta * accel)
@@ -60,3 +63,6 @@ func damage_player(n: int):
 func heal_player(n: int):
 	currhealthPoints += n
 	player_damaged.emit()
+
+func collect(item):
+	inventory.insert(item)
