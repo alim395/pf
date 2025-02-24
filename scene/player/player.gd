@@ -48,13 +48,14 @@ func player_attack():
 		magic_cooldown = true
 
 func _physics_process(delta: float):
-	# Movement
-	input = Input.get_vector("Left","Right","Up","Down")
-	player_movement(input, delta)
-	move_and_slide()
+	if Global.DialogueOn == false:
+		# Movement
+		input = Input.get_vector("Left","Right","Up","Down")
+		player_movement(input, delta)
+		move_and_slide()
 
-	# Attack
-	player_attack()
+		# Attack
+		player_attack()
 
 func damage_player(n: int):
 	currhealthPoints -= n

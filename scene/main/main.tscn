@@ -43,9 +43,9 @@ show_percentage = false
 [node name="MagicBar" type="ProgressBar" parent="HUD"]
 visible = false
 layout_mode = 0
-offset_left = 10.0
+offset_left = 25.0
 offset_top = 45.0
-offset_right = 410.0
+offset_right = 425.0
 offset_bottom = 75.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_xw2pf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tghq")

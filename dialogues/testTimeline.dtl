@@ -1,0 +1,23 @@
+[signal arg="DialogueBegins"]
+OmniChar/OmniChar (Neutral): Hello WORLD!
+OmniChar/OmniChar: What's your name?
+[text_input var="PlayerName"]
+OmniChar/OmniChar: Hello {PlayerName}. How are you?
+- Good
+	OmniChar/OmniChar (Happy): Thats good to hear!
+- Bad
+	OmniChar/OmniChar (Sad): Oh no! I hope your day gets better.
+OmniChar/OmniChar (Neutral): Welcome to the demo! Let me tell you a secret!
+OmniChar/OmniChar: If you press "Esc" while playing the game, you can go back to the main menu.
+OmniChar/OmniChar: You can also press "R" to reset the current scene.
+OmniChar/OmniChar: Would you like to know more?
+- Yes
+	OmniChar/OmniChar: If you press "Z" or "X", you can increase or decrease Health by 1. 
+	OmniChar/OmniChar: You can also refill magic with "C".
+	OmniChar/OmniChar: Lastly, you can open and close your inventory with "I".
+- No
+	OmniChar/OmniChar (Happy): Ok then! I hope you enjoy the Demo.
+	[signal arg="DialogueEnds"]
+	[end_timeline]
+Thats everything I have for now, I hope you have fun \:)
+[signal arg="DialogueEnds"]

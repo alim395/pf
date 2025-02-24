@@ -19,6 +19,11 @@ func _process(delta: float) -> void:
 		$Player.currhealthPoints += 1
 		print($Player.currhealthPoints)
 		set_health_bar()
+	if Input.is_action_just_pressed("DebugMagic"):
+		var magicHeal = 20 - $Player.currmagicPoints
+		$Player.currmagicPoints += magicHeal
+		print($Player.currmagicPoints)
+		set_magic_bar()
 	if Input.is_action_just_pressed("DebugExit"):
 		get_tree().change_scene_to_file("res://scene/menus/main_menu/main_menu.tscn")
 func set_health_bar() -> void:
