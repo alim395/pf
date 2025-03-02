@@ -3,6 +3,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HUD/HealthBar.max_value = $Player.maxhealthPoints
+	$HUD/HealthText.text = str($Player.maxhealthPoints)
 	$HUD/MagicBar.max_value = $Player.maxmagicPoints
 	set_health_bar()
 	set_magic_bar()
@@ -49,6 +50,7 @@ func _input(event: InputEvent):
 
 func set_health_bar() -> void:
 	$HUD/HealthBar.value = $Player.currhealthPoints
+	$HUD/HealthText.text = str($Player.currhealthPoints)
 
 func set_magic_bar() -> void:
 	$HUD/MagicBar.value = $Player.currmagicPoints

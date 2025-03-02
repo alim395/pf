@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://joe7d32lrd1p"]
+[gd_scene load_steps=11 format=3 uid="uid://joe7d32lrd1p"]
 
 [ext_resource type="Script" path="res://scene/mainD/mainD.gd" id="1_kdksa"]
 [ext_resource type="Texture2D" uid="uid://btujjtirf7euv" path="res://sprite/UI/HP_EMPTY.png" id="2_v50xn"]
 [ext_resource type="Texture2D" uid="uid://dvkxldwfndg1y" path="res://sprite/UI/HP_FULL.png" id="3_upgkj"]
 [ext_resource type="PackedScene" uid="uid://bounvdgw8g01y" path="res://scene/room/room.tscn" id="4_nh7it"]
+[ext_resource type="FontFile" uid="uid://ug7qwu6jq5es" path="res://resource/fonts/kremlin.ttf" id="4_um71a"]
 [ext_resource type="PackedScene" uid="uid://blv22nf4vm8r3" path="res://scene/player/player.tscn" id="5_kfdl1"]
+[ext_resource type="Texture2D" uid="uid://dhipia4ai20v4" path="res://sprite/UI/UI_concept.png" id="7_2yfte"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw2pf"]
 
@@ -40,6 +42,7 @@ rounded = true
 show_percentage = false
 
 [node name="MagicBar" type="ProgressBar" parent="HUD"]
+visible = false
 layout_mode = 0
 offset_left = 183.0
 offset_top = 72.0
@@ -55,17 +58,33 @@ show_percentage = false
 
 [node name="HealthBar" type="TextureProgressBar" parent="HUD"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 8.66
-anchor_bottom = 8.66
-offset_right = 3117.6
-offset_bottom = 3117.6
-scale = Vector2(0.05, 0.05)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 516.0
+offset_right = 1980.0
+offset_bottom = 2516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0900468, 0.0900468)
 max_value = 20.0
 value = 15.0
 fill_mode = 3
 texture_under = ExtResource("2_v50xn")
 texture_progress = ExtResource("3_upgkj")
+
+[node name="HealthText" type="RichTextLabel" parent="HUD"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 560.0
+offset_right = 240.0
+offset_bottom = 640.0
+theme_override_fonts/normal_font = ExtResource("4_um71a")
+theme_override_font_sizes/normal_font_size = 42
+text = "99"
 
 [node name="Room" parent="." instance=ExtResource("4_nh7it")]
 
@@ -93,6 +112,12 @@ custom_minimum_size = Vector2(640, 360)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 text = "PRESS ENTER TO BEGIN DIALOGUE"
+
+[node name="UiConcept" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 358)
+scale = Vector2(0.666667, 0.67037)
+texture = ExtResource("7_2yfte")
 
 [connection signal="magic_shoot" from="Player" to="." method="_on_player_magic_shoot"]
 [connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
