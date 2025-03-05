@@ -12,7 +12,7 @@ config_version=5
 
 config/name="PF"
 run/main_scene="res://scene/menus/main_menu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://resource/PF_ICON.png"
 
 [autoload]
@@ -23,7 +23,7 @@ Global="*res://global/global.gd"
 [dialogic]
 
 directories/dch_directory={
-"OmniChar/OmniChar": "res://dialogues/characters/OmniChar/OmniChar.dch"
+"OmniChar": "res://dialogues/characters/OmniChar/OmniChar.dch"
 }
 directories/dtl_directory={
 "testTimeline": "res://dialogues/testTimeline.dtl"

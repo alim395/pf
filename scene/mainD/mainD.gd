@@ -1,5 +1,7 @@
 extends Node2D
 
+var dialogueDone = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HUD/HealthBar.max_value = $Player.maxhealthPoints
@@ -8,6 +10,7 @@ func _ready() -> void:
 	set_health_bar()
 	set_magic_bar()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	dialogueDone = false
 
 func _on_dialogic_signal(argument:String):
 	if argument == "DialogueBegins":
@@ -44,9 +47,10 @@ func _input(event: InputEvent):
 	# check if a dialog is already running
 	if Dialogic.current_timeline != null:
 		return
-	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
+	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed and !dialogueDone:
 		Dialogic.start("res://dialogues/testTimeline.dtl")
 		get_viewport().set_input_as_handled()
+		dialogueDone = true
 
 func set_health_bar() -> void:
 	$HUD/HealthBar.value = $Player.currhealthPoints

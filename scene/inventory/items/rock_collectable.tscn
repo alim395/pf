@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://du6isjco71hq6"]
 
-[ext_resource type="Script" path="res://scene/inventory/items/rock_collectable.gd" id="1_dqbjy"]
+[ext_resource type="Script" uid="uid://nj16stke7unc" path="res://scene/inventory/items/rock_collectable.gd" id="1_dqbjy"]
 [ext_resource type="Resource" uid="uid://dqn1qg6kh115b" path="res://scene/inventory/items/rock.tres" id="2_132ng"]
 [ext_resource type="Texture2D" uid="uid://rd04yg87kgv0" path="res://sprite/inventory/items/placeholder_rock.png" id="2_yp206"]
 

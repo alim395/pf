@@ -29,10 +29,10 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scene/menus/main_menu/main_menu.tscn")
 func set_health_bar() -> void:
 	$HUD/HealthBar.value = $Player.currhealthPoints
+	$HUD/HealthText.text = str($Player.currhealthPoints)
 
 func set_magic_bar() -> void:
 	$HUD/MagicBar.value = $Player.currmagicPoints
-	$HUD/HealthText.text = str($Player.currhealthPoints)
 
 func _on_player_magic_shoot() -> void:
 	set_magic_bar()

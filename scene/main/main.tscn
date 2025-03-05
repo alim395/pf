@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dqp32rkbyta3h"]
 
 [ext_resource type="PackedScene" uid="uid://blv22nf4vm8r3" path="res://scene/player/player.tscn" id="1_1ilrj"]
-[ext_resource type="Script" path="res://scene/main/main.gd" id="1_6780g"]
+[ext_resource type="Script" uid="uid://bhl4ylw31se8s" path="res://scene/main/main.gd" id="1_6780g"]
 [ext_resource type="Texture2D" uid="uid://btujjtirf7euv" path="res://sprite/UI/HP_EMPTY.png" id="2_nm718"]
 [ext_resource type="PackedScene" uid="uid://bounvdgw8g01y" path="res://scene/room/room.tscn" id="2_wylpf"]
 [ext_resource type="Texture2D" uid="uid://dvkxldwfndg1y" path="res://sprite/UI/HP_FULL.png" id="3_xst2w"]
@@ -77,6 +77,7 @@ texture_under = ExtResource("2_nm718")
 texture_progress = ExtResource("3_xst2w")
 
 [node name="HealthText" type="RichTextLabel" parent="HUD"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 560.0
 offset_right = 240.0

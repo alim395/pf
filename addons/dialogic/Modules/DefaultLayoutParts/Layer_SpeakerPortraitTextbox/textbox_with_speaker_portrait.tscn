@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://by6waso0mjpjp"]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
+[ext_resource type="Script" uid="uid://hdeu8p2stmyq" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
+[ext_resource type="Script" uid="uid://dtvgdq1ngfb64" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
+[ext_resource type="Script" uid="uid://b75y6ans7w3vn" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
+[ext_resource type="Script" uid="uid://cefc01kjccfep" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
+[ext_resource type="Script" uid="uid://6ax581ughd4l" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
