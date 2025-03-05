@@ -4,6 +4,8 @@ var target_health: float
 var current_health: float
 var smoothness: float = 6.0  # Speed of interpolation (higher = faster)
 
+var dialogueDone = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Player/HUD/HealthBar.max_value = $Player.maxhealthPoints
@@ -54,9 +56,10 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent):
 	if Dialogic.current_timeline != null:
 		return
-	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
+	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed and !dialogueDone:
 		Dialogic.start("res://dialogues/testTimeline.dtl")
 		get_viewport().set_input_as_handled()
+		dialogueDone = true
 
 func set_health_bar() -> void:
 	$Player/HUD/HealthBar.value = current_health  # Use interpolated value
