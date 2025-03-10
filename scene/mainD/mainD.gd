@@ -15,6 +15,7 @@ func _ready() -> void:
 	set_health_bar()
 	set_magic_bar()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	dialogueDone = false
 
 func _on_dialogic_signal(argument:String):
 	if argument == "DialogueBegins":
