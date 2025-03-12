@@ -26,7 +26,6 @@ ItemDesc = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemDesc")
 PlayerMoney = NodePath("PlayerMoneyContainer/MarginContainer/PlayerMoney")
 
 [node name="ItemPanelContainer" type="PanelContainer" parent="ShopUI"]
-layout_mode = 0
 offset_right = 600.0
 offset_bottom = 200.0
 

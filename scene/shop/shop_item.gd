@@ -16,15 +16,17 @@ enum {INSTANT,CONSUMABLE,WEAPON}
 
 @export var price: int
 @export var itemType: int
+@export var itemDesc: String
 
 # Constructor Function
-func _init(p_name = "Unnamed", p_texture = DEFAULT_TEXTURE, p_stackable = false, p_stack_amount = 16, p_price = 1, p_itemType = INSTANT):
+func _init(p_name = "Unnamed", p_texture = DEFAULT_TEXTURE, p_stackable = false, p_stack_amount = 16, p_price = 1, p_itemType = INSTANT, p_itemDesc = "Unknown Descritpion."):
 	name = p_name
 	texture = p_texture
 	stackable = p_stackable
 	stack_amount = p_stack_amount
 	price = p_price
 	itemType = p_itemType
+	itemDesc = p_itemDesc
 
 # Item Conversion
 func ShopToInv(p_texture = DEFAULT_TEXTURE):
