@@ -25,7 +25,7 @@ ItemName = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemName")
 ItemType = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemType")
 ItemDesc = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemDesc")
 PlayerMoney = NodePath("PlayerMoneyContainer/MarginContainer/PlayerMoney")
-ShopItemContainer = NodePath("ShopItemPanel/ShopItemContainer")
+ShopItemContainer = NodePath("ShopItemPanel")
 
 [node name="ItemPanelContainer" type="PanelContainer" parent="ShopUI"]
 layout_mode = 0
