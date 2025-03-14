@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://byp1705ffx3ye"]
+
+[ext_resource type="Script" uid="uid://cxchaiid4jg5" path="res://scene/weapons/magic/magic_ball.gd" id="1_a3a33"]
+[ext_resource type="Texture2D" uid="uid://cob58w04ofdjv" path="res://sprite/weapon/MagicBall.png" id="1_vpggy"]
+[ext_resource type="Texture2D" uid="uid://dyn2on8hwcunn" path="res://sprite/Assets/light.png" id="3_7puhn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36i5a"]
+radius = 32.0624
+
+[node name="MagicBall" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_a3a33")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vpggy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_36i5a")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.324, 0.8808, 0.9, 1)
+energy = 0.8
+shadow_enabled = true
+texture = ExtResource("3_7puhn")
+texture_scale = 0.7
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

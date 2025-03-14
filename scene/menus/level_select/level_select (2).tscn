@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://1gps5tqtgm1m"]
+
+[ext_resource type="Script" uid="uid://bjdra1vnfttg3" path="res://scene/menus/level_select/level_select.gd" id="1_8ao6k"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ao6k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Level0" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+text = "Level0 - Main Test"
+
+[node name="Level1" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+text = "Level1 - DIalogue Test"
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -56.0
+offset_right = -40.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "BACK"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Level0" to="." method="_on_level_0_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

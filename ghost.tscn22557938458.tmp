@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw2gljhmo2gnr"]
+
+[ext_resource type="Texture2D" uid="uid://c8jsqoshaf1w0" path="res://icon.svg" id="1_6attn"]
+[ext_resource type="Script" uid="uid://cwt30sbciqcos" path="res://Ghost.gd" id="2_obmiq"]
+
+[node name="Ghost" type="Sprite2D"]
+modulate = Color(0.485703, 0.485704, 0.485703, 1)
+texture = ExtResource("1_6attn")
+script = ExtResource("2_obmiq")

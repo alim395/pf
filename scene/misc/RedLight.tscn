@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://4hir8kd0cx0i"]
+
+[ext_resource type="Texture2D" uid="uid://dyn2on8hwcunn" path="res://sprite/Assets/light.png" id="1_hvref"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = ExtResource("1_hvref")
+texture_scale = 3.0

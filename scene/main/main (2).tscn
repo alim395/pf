@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqp32rkbyta3h"]
+
+[ext_resource type="PackedScene" uid="uid://blv22nf4vm8r3" path="res://scene/player/player.tscn" id="1_1ilrj"]
+[ext_resource type="Script" uid="uid://bqtny553hb7gt" path="res://scene/main/main.gd" id="1_6780g"]
+[ext_resource type="PackedScene" uid="uid://bounvdgw8g01y" path="res://scene/room/room.tscn" id="2_wylpf"]
+[ext_resource type="Resource" uid="uid://b4q83jnewtman" path="res://scene/inventory/playerinventory.tres" id="4_qtsyf"]
+[ext_resource type="PackedScene" uid="uid://du6isjco71hq6" path="res://scene/inventory/items/rock_collectable.tscn" id="6_lsj45"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6780g")
+
+[node name="Room" parent="." instance=ExtResource("2_wylpf")]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_1ilrj")]
+position = Vector2(200, 200)
+inventory = ExtResource("4_qtsyf")
+
+[node name="rock_collectable" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(553, 163)
+
+[node name="rock_collectable2" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(708, 178)
+
+[node name="rock_collectable3" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(483, 301)
+
+[node name="rock_collectable4" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(639, 360)
+
+[node name="rock_collectable5" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(1015, 339)
+
+[node name="rock_collectable6" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(884, 172)
+
+[node name="rock_collectable7" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(794, 312)
+
+[node name="rock_collectable8" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(741, 473)
+
+[node name="rock_collectable9" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(568, 262)
+
+[node name="rock_collectable10" parent="." instance=ExtResource("6_lsj45")]
+position = Vector2(547, 420)
+
+[connection signal="magic_shoot" from="Player" to="." method="_on_player_magic_shoot"]
+[connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
