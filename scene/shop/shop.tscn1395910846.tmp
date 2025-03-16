@@ -102,14 +102,12 @@ custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 itemName = "Test1"
 stack_amount = 1
-itemType = 0
 
 [node name="ShopItem2" parent="ShopUI/ShopItemPanel/ShopItemContainer" instance=ExtResource("4_at5no")]
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 itemName = "Test2"
 stack_amount = 1
-itemType = 1
 itemDesc = "Another placeholder for testing purposes."
 
 [node name="ShopItem3" parent="ShopUI/ShopItemPanel/ShopItemContainer" instance=ExtResource("4_at5no")]

@@ -18,6 +18,8 @@ enum {INSTANT,CONSUMABLE,WEAPON}
 @export var itemType: int
 @export var itemDesc: String
 
+signal ShopItemBuy
+
 # Constructor Function
 func _init(p_name = "Unnamed", p_texture = DEFAULT_TEXTURE, p_stackable = false, p_stack_amount = 16, p_price = 1, p_itemType = INSTANT, p_itemDesc = "Unknown Descritpion."):
 	itemName = p_name
@@ -35,3 +37,8 @@ func _init(p_name = "Unnamed", p_texture = DEFAULT_TEXTURE, p_stackable = false,
 func ShopToInv(p_texture = DEFAULT_TEXTURE):
 	var InvItem = InventoryItem.new(self.itemName,p_texture,self.stackable,self.stack_amount)
 	return InvItem
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			emit_signal("ShopItemBuy")
