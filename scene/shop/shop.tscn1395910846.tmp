@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://8bc4bhfd51fb"]
+
+[ext_resource type="Script" uid="uid://c6vagbpfu70hc" path="res://scene/shop/shop.gd" id="1_jdi50"]
+[ext_resource type="Texture2D" uid="uid://bcr466wuiwj6b" path="res://scene/shop/shop_placeholders/counter.png" id="2_pfgle"]
+[ext_resource type="Script" uid="uid://cxagafy2brvm0" path="res://scene/shop/shop_ui.gd" id="3_mq6bq"]
+[ext_resource type="PackedScene" uid="uid://dyv8nhqy8xd06" path="res://scene/shop/shop_items/shop_item.tscn" id="4_at5no"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_jdi50")
+
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(636, 320)
+scale = Vector2(1.28945, 1.28205)
+texture = ExtResource("2_pfgle")
+
+[node name="ShopUI" type="Control" parent="." node_paths=PackedStringArray("ItemName", "ItemType", "ItemDesc", "PlayerMoney", "ShopItemContainer")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 504.0
+offset_right = 616.0
+offset_bottom = 704.0
+script = ExtResource("3_mq6bq")
+ItemName = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemName")
+ItemType = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemType")
+ItemDesc = NodePath("ItemPanelContainer/MarginContainer/VBoxContainer/ItemDesc")
+PlayerMoney = NodePath("PlayerMoneyContainer/MarginContainer/PlayerMoney")
+ShopItemContainer = NodePath("ShopItemPanel/ShopItemContainer")
+
+[node name="ItemPanelContainer" type="PanelContainer" parent="ShopUI"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 200.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopUI/ItemPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopUI/ItemPanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemName" type="RichTextLabel" parent="ShopUI/ItemPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "ItemName"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ItemType" type="RichTextLabel" parent="ShopUI/ItemPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "ItemType"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ItemDesc" type="RichTextLabel" parent="ShopUI/ItemPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales, quam eu sodales ornare, augue justo tempor libero, a aliquam odio lectus quis erat. Vestibulum a mattis tellus. Nunc consectetur consectetur tortor ac sollicitudin. Vivamus aliquam nec sem eget interdum. Sed mattis pretium accumsan."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PlayerMoneyContainer" type="PanelContainer" parent="ShopUI"]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = -488.0
+offset_right = 1248.0
+offset_bottom = -376.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopUI/PlayerMoneyContainer"]
+layout_mode = 2
+
+[node name="PlayerMoney" type="RichTextLabel" parent="ShopUI/PlayerMoneyContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "25 P"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopItemPanel" type="PanelContainer" parent="ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.027
+anchor_top = -2.52
+anchor_right = -0.027
+anchor_bottom = -2.52
+offset_left = 16.2
+offset_top = 16.0
+offset_right = 1040.2
+offset_bottom = 352.0
+
+[node name="ShopItemContainer" type="HBoxContainer" parent="ShopUI/ShopItemPanel"]
+layout_mode = 2
+
+[node name="ShopItem" parent="ShopUI/ShopItemPanel/ShopItemContainer" instance=ExtResource("4_at5no")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+itemName = "Test1"
+stack_amount = 1
+
+[node name="ShopItem2" parent="ShopUI/ShopItemPanel/ShopItemContainer" instance=ExtResource("4_at5no")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+itemName = "Test2"
+stack_amount = 1
+itemDesc = "Another placeholder for testing purposes."
+
+[node name="ShopItem3" parent="ShopUI/ShopItemPanel/ShopItemContainer" instance=ExtResource("4_at5no")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+itemName = "Test3"
+stack_amount = 1
+itemDesc = "YET another placeholder for testing purposes."

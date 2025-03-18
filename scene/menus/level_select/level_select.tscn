@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1gps5tqtgm1m"]
 
-[ext_resource type="Script" uid="uid://bjdra1vnfttg3" path="res://scene/menus/level_select/level_select.gd" id="1_8ao6k"]
+[ext_resource type="Script" uid="uid://p2ulpckkuehx" path="res://scene/menus/level_select/level_select.gd" id="1_8ao6k"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -38,7 +38,12 @@ text = "Level0 - Main Test"
 [node name="Level1" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 360)
 layout_mode = 2
-text = "Level1 - DIalogue Test"
+text = "Level1 - Dialogue Test"
+
+[node name="Level2" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+text = "Level2 - Shop Test"
 
 [node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 0)
@@ -58,4 +63,5 @@ text = "BACK"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Level0" to="." method="_on_level_0_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
