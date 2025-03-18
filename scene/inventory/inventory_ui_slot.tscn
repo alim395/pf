@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://m1ovjln312nd"]
 
 [ext_resource type="Texture2D" uid="uid://dlu7qhntba1xh" path="res://sprite/inventory/placeholder_inventory_slot.jpg" id="1_6b0lv"]
-[ext_resource type="Script" uid="uid://bmeegmublb28y" path="res://scene/inventory/inventory_ui_slot.gd" id="1_vuc7e"]
+[ext_resource type="Script" uid="uid://oxuhwx8owhsx" path="res://scene/inventory/inventory_ui_slot.gd" id="1_vuc7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp114"]
 border_width_left = 2
