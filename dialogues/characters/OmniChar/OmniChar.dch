@@ -35,7 +35,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://dialogues/characters/OmniChar/Sad.png\""
+"image": "\"Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
