@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb1emug8kpamn"]
+[gd_scene load_steps=4 format=3 uid="uid://cb1emug8kpamn"]
 
 [ext_resource type="PackedScene" uid="uid://bounvdgw8g01y" path="res://scene/room/room.tscn" id="1_4lw2n"]
 [ext_resource type="Script" uid="uid://ba8bf1nxkoy0u" path="res://scene/combat/combat.gd" id="1_bptys"]
-[ext_resource type="PackedScene" uid="uid://blv22nf4vm8r3" path="res://scene/player/player.tscn" id="2_odnam"]
-[ext_resource type="Resource" uid="uid://b4q83jnewtman" path="res://scene/inventory/playerinventory.tres" id="3_bptys"]
+[ext_resource type="PackedScene" uid="uid://d1eex0fqxrm6x" path="res://scene/combat/combatPlayer/combatPlayer.tscn" id="3_odnam"]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_bptys")
 
 [node name="Room" parent="." instance=ExtResource("1_4lw2n")]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_odnam")]
-position = Vector2(200, 200)
-inventory = ExtResource("3_bptys")
+[node name="Player" parent="." instance=ExtResource("3_odnam")]
+position = Vector2(112, 186)
